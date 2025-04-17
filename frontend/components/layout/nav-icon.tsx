@@ -1,7 +1,7 @@
 'use client';
 
 import IconButton from '@/components/ui/icon-button';
-import { Bell, Sun } from 'lucide-react';
+import { Bell, Moon } from 'lucide-react';
 
 export default function NavIcons() {
 	function handleTheme() {
@@ -20,7 +20,7 @@ export default function NavIcons() {
 				ariaLabel="Notifications"
 			/>
 			<IconButton
-				icon={<Sun size={16} />}
+				icon={<Moon size={16} />}
 				onClick={handleTheme}
 				ariaLabel="Toggle theme"
 			/>
