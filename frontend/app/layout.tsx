@@ -1,10 +1,5 @@
+import Navbar from '@/components/layout/navbar';
 import '../styles/globals.css';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-	title: 'Minecraft Network',
-	description: 'Your modded server hub.',
-};
 
 export default function RootLayout({
 	children,
@@ -13,7 +8,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body>{children}</body>
+			<body className="bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-white">
+				<Navbar />
+				{children}
+			</body>
 		</html>
 	);
 }
