@@ -20,9 +20,9 @@ export default function NavItem({
 	const isActive = pathname === href;
 
 	const commonClasses = clsx(
-		'flex items-center gap-2 px-2 py-1 rounded-lg text-sm font-medium transition bg-zinc-700',
+		'flex items-center gap-2 px-2 py-1 rounded-lg text-sm font-medium transition',
 		isActive
-			? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white'
+			? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white hover:bg-zinc-100 dark:hover:bg-zinc-700'
 			: 'hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-600 dark:text-zinc-300'
 	);
 
