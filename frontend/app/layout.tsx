@@ -10,9 +10,11 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className="bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white transition-colors">
-				<Navbar />
-				{children}
-				<Footer />
+				<div className="flex flex-col min-h-screen">
+					<Navbar />
+					<main className="flex-1">{children}</main>
+					<Footer />
+				</div>
 			</body>
 		</html>
 	);
