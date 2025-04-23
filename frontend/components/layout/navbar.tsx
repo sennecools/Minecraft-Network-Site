@@ -19,7 +19,7 @@ export default function Navbar() {
 			/>
 			<NavItem
 				icon={<ShoppingCart size={16} />}
-				title="Shop"
+				title="Patreon"
 				href="https://patreon.com/c/SenNerd"
 				openNewTab
 			/>
