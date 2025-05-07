@@ -15,6 +15,8 @@ type ServerCardProps = {
 	imageUrl?: string;
 };
 
+//TODO add a image for when a image is not found?
+
 export default function ServerCard({
 	name,
 	modpack,
