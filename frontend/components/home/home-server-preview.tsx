@@ -15,7 +15,8 @@ const mockServers = [
 		name: 'MoniFactory',
 		modpack: 'MoniFactory v1.3',
 		description: 'Factory-focused modpack with tight progression.',
-		playerCount: 2,
+		playerCount: 0,
+		isClosed: true,
 		imageUrl: '/modpacks/monifactory.png',
 	},
 ];

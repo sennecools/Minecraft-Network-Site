@@ -12,6 +12,7 @@ type ServerCardProps = {
 	description: string;
 	playerCount: number;
 	isPopular?: boolean;
+	isClosed?: boolean;
 	imageUrl?: string;
 };
 
@@ -23,6 +24,7 @@ export default function ServerCard({
 	description,
 	playerCount,
 	isPopular = false,
+	isClosed = false,
 	imageUrl,
 }: ServerCardProps) {
 	const slug = slugify(name);
@@ -38,6 +40,12 @@ export default function ServerCard({
 			{isPopular && (
 				<span className="absolute top-3 right-3 text-xs font-semibold bg-indigo-600 text-white px-2 py-1 rounded-md shadow-md">
 					Popular Server
+				</span>
+			)}
+
+			{isClosed && (
+				<span className="absolute top-3 right-3 text-xs font-semibold bg-red-600 text-white px-2 py-1 rounded-md shadow-md">
+					Closed
 				</span>
 			)}
 
@@ -67,9 +75,18 @@ export default function ServerCard({
 			<p className="text-sm text-zinc-500 dark:text-zinc-400">
 				{description}
 			</p>
-			<p className="text-sm text-green-600 mt-1">
-				{playerCount} players online
-			</p>
+
+			{isClosed ? (
+				<p className="text-sm text-red-600 mt-1">Server is closed</p>
+			) : (
+				<p className="text-sm text-green-600 dark:text-green-600 mt-1">
+					{playerCount === 0
+						? 'No players online'
+						: `${playerCount} player${
+								playerCount > 1 ? 's' : ''
+						  } online`}
+				</p>
+			)}
 		</Link>
 	);
 }
