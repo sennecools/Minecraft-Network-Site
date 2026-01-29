@@ -275,10 +275,10 @@ export default function ServerAnalyticsPage({
         hour: '2-digit',
         minute: '2-digit'
       }),
-      players: null,
-      predicted: null,
-      latency: null,
-      online: null,
+      players: null as number | null,
+      predicted: null as number | null,
+      latency: null as number | null,
+      online: 0,
       isFuture: false,
     });
   }
