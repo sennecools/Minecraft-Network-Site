@@ -58,7 +58,7 @@ export async function GET(request: NextRequest) {
         maxPlayers: legacyResponse.players.max,
         version: legacyResponse.version?.name || 'Unknown',
         motd: legacyResponse.motd.clean,
-        latency: legacyResponse.roundTripLatency,
+        latency: null, // Legacy protocol doesn't provide latency
       });
     } catch (legacyError) {
       console.error(`Error fetching status for ${server.id}:`, modernError);

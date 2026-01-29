@@ -12,7 +12,7 @@ interface ServerStatus {
   online: boolean;
   players: number;
   maxPlayers: number;
-  latency: number;
+  latency: number | null;
   version: string;
 }
 
@@ -42,7 +42,7 @@ async function getServerStatus(ip: string, port: number): Promise<ServerStatus> 
       online: true,
       players: legacyResponse.players.online,
       maxPlayers: legacyResponse.players.max,
-      latency: legacyResponse.roundTripLatency,
+      latency: null, // Legacy protocol doesn't provide latency
       version: legacyResponse.version?.name || 'Unknown',
     };
   }
