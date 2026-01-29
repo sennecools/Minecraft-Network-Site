@@ -449,11 +449,11 @@ export default function ServerAnalyticsPage({
                   border: '1px solid hsl(var(--border))',
                   borderRadius: '8px',
                 }}
-                formatter={(value: any, name: string) => {
-                  if (value === null) return ['No data', name];
+                formatter={(value: any, name?: string) => {
+                  if (value === null) return ['No data', name ?? ''];
                   if (name === 'Players Online') return [value, 'Actual'];
                   if (name === 'Predicted') return [value, 'Predicted'];
-                  return [value, name];
+                  return [value, name ?? ''];
                 }}
               />
               <Legend />
